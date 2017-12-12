@@ -17,11 +17,12 @@ side = 1;
 
 
 % Colors
-red =      [255, 0, 0];       % Front
-blue =     [0, 0, 255];       % Back
-green =    [0, 255, 0];       % Bottom
-yellow =   [255, 255, 0];     % Top
-
+red =    [255 0 0];       % Front
+blue =   [0 0 255];       % Back
+green =  [0 255 0];       % Bottom
+yellow = [255 255 0];     % Top
+pink =   [255 0 255];     % Left
+white =  [255, 255, 255]; % Right
 
 % Front
 front = create_face([0, 0, 0], side, 3, red);
@@ -39,14 +40,15 @@ objetos = [objetos, bottom];
 top = create_face([0 3 -3], side, 2, yellow);
 objetos = [objetos, top];
 
+% Left
+left = create_face([0 0 -3], side, 1, pink);
+objetos = [objetos, left];
 
-% s1 = create_square([0, 0, 0], side, 1, color);
-% s2 = create_square([0, 0, 0], side, 3, [255, 0, 0]);
-% objetos = [objetos, s1];
-% objetos = [objetos, s2];
+% Right
+right = create_face([3 0 -3], side, 1, white);
+objetos = [objetos, right];
 
 centroCu = centroCubo(objetos);
-
 
 %image parameters
 nx = 200;
@@ -63,8 +65,11 @@ b = -3;
 % Y View
 % e = [0 1 0]
 
-e = [-1 -0.3 1]
+% X View
+% e = [3 0 0]
 
+% Cool view
+e = [-1 -0.4 1]
 
 
 ww = e/norm(e);

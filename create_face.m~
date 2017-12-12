@@ -5,9 +5,9 @@ function face = create_face(bl, side, invariant, color)
     % Face on the YZ Plan
     if invariant == 1
         for i = bl(3) : bl(3)+2
-            for j = bl(2) : bl(2)+2
-                square = create_square([bl(1), j, i], side, 1, color);
-                face = [face, square];
+            for j = bl(2) : bl(2)2
+                square = create_square([0, j, i], side, 1, blue);
+                objetos = [objetos, square];
             end
         end
     end

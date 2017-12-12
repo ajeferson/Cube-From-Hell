@@ -9,14 +9,14 @@ function q = create_square(bl, size, invariant, color)
         q.p4 = [bl(1), bl(2) + size, bl(3)];
     end
     
-    % Y is not changing (Done)
+    % Y is not changing
     if invariant == 2
         q.p2 = [bl(1), bl(2), bl(3) + size];
         q.p3 = [bl(1) + size, bl(2), bl(3) + size];
         q.p4 = [bl(1) + size, bl(2), bl(3)];
     end
     
-    % Z is not changing (Done)
+    % Z is not changing
     if invariant == 3
         q.p2 = [bl(1) + size, bl(2), bl(3)];
         q.p3 = [bl(1) + size, bl(2) + size, bl(3)];
@@ -33,4 +33,5 @@ function q = create_square(bl, size, invariant, color)
     q.maxY = max([q.p1(2); q.p2(2); q.p3(2); q.p4(2)]);
     q.maxZ = max([q.p1(3); q.p2(3); q.p3(3); q.p4(3)]);
     q.minZ = min([q.p1(3); q.p2(3); q.p3(3); q.p4(3)]);
+    
 end
