@@ -20,7 +20,7 @@ side = 1;
 red =      [255, 0, 0];       % Front
 blue =     [0, 0, 255];       % Back
 green =    [0, 255, 0];       % Bottom
-
+yellow =   [255, 255, 0];     % Top
 
 
 % Front
@@ -34,6 +34,11 @@ objetos = [objetos, back];
 % Bottom
 bottom = create_face([0, 0, -3], side, 2, green);
 objetos = [objetos, bottom];
+
+% Top
+top = create_face([0 3 -3], side, 2, yellow);
+objetos = [objetos, top];
+
 
 % s1 = create_square([0, 0, 0], side, 1, color);
 % s2 = create_square([0, 0, 0], side, 3, [255, 0, 0]);
@@ -52,16 +57,13 @@ r = 3;
 t = 3;
 b = -3;
 
-% Front View
+% Z View
 % e = [0 0 1];
 
-% Back View
-% e = [0 0 -3]
-
-% Top View
+% Y View
 % e = [0 1 0]
 
-% e = [-1 -0.3 1]
+e = [-1 -0.3 1]
 
 
 
