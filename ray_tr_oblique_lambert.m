@@ -10,43 +10,9 @@ clear all;
 %%%   @description: Ray-tracing com visÃ£o ortogrÃ¡fica e Lambert shadding
 %-----
 
-% objects 
-
-objetos = {};
-side = 1;
-
-
-% Colors
-red =    [255 0 0];       % Front
-blue =   [0 0 255];       % Back
-green =  [0 255 0];       % Bottom
-yellow = [255 255 0];     % Top
-pink =   [255 0 255];     % Left
-white =  [255, 255, 255]; % Right
-
-% Front
-front = create_face([0, 0, 0], side, 3, red);
-objetos = [objetos, front];
-
-% Back
-back = create_face([0, 0, -3], side, 3, blue);
-objetos = [objetos, back];
-
-% Bottom
-bottom = create_face([0, 0, -3], side, 2, green);
-objetos = [objetos, bottom];
-
-% Top
-top = create_face([0 3 -3], side, 2, yellow);
-objetos = [objetos, top];
-
-% Left
-left = create_face([0 0 -3], side, 1, pink);
-objetos = [objetos, left];
-
-% Right
-right = create_face([3 0 -3], side, 1, white);
-objetos = [objetos, right];
+% Cube
+side = 3;
+objetos = create_cube([-1 -1 1], side);
 
 centroCu = centroCubo(objetos);
 
@@ -54,10 +20,10 @@ centroCu = centroCubo(objetos);
 nx = 200;
 ny = 200;
 
-l = -3;
-r = 3;
-t = 3;
-b = -3;
+l = -4;
+r = 4;
+t = 4;
+b = -4;
 
 % Z View
 % e = [0 0 1];
